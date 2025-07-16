@@ -12,7 +12,7 @@ function TaskColumn({status, tasks}: TaskColumnProps) {
     return (
         <Col>
         <h2>{status}</h2>
-        <Droppable droppableId="list">
+        <Droppable droppableId={status}>
             {(provided) => (
                 <div ref={provided.innerRef} {...provided.droppableProps}>
                     {tasks.map((task, index) => (
