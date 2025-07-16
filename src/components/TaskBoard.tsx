@@ -25,7 +25,7 @@ function TaskBoard({ tasks, setTasks }: TaskBoardProps) {
 
     const draggedTask = tasks.find((task) => task.id === draggableId);
     if (!draggedTask) {
-      console.error(`Görev bulunamadı: ${draggableId}`);
+      console.error(`Task not found: ${draggableId}`);
       return;
     }
 
@@ -56,7 +56,7 @@ function TaskBoard({ tasks, setTasks }: TaskBoardProps) {
     setTasks(newTasks);
   };
 
-  const statuses = ['To Do', 'In Progress', 'Done'];
+  const statuses = ['Pending', 'Ongoing', 'Completed'];
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>

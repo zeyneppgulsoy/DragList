@@ -1,4 +1,3 @@
-import React from 'react';
 import type { TaskProps } from '../types';
 import { Col } from 'react-bootstrap';
 import { Droppable } from '@hello-pangea/dnd';
@@ -13,11 +12,11 @@ function TaskColumn({status, tasks}: TaskColumnProps) {
         <Col>
         <h2>{status}</h2>
         <Droppable droppableId={status}>
-            {(provided) => (
+            {(provided, snapshot) => (
                 <div ref={provided.innerRef} {...provided.droppableProps}
              
                     style={{
-                        backgroundColor: 'lightgray',
+                        backgroundColor: snapshot.isDraggingOver ? 'lightgray' : 'lightblue',
                         padding: '10px',
                         borderRadius: '5px',
                         minHeight: '200px',

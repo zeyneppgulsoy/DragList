@@ -1,4 +1,3 @@
-import React from 'react';
 import type { TaskProps } from '../types';
 import { Draggable } from '@hello-pangea/dnd';
 import { Card } from 'react-bootstrap';
