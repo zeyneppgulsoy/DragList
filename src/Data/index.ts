@@ -30,4 +30,3 @@ export const taskData = [
       assignee: 'Maria Koch',
     },
   ];
-  
