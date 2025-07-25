@@ -8,7 +8,6 @@ interface TaskColumnProps {
 }
 
 function TaskColumn({status, tasks}: TaskColumnProps) {
-    // Modern Professional tema renkleri
     const getColumnStyles = (status: string) => {
         switch (status) {
             case 'Pending':
@@ -46,13 +45,11 @@ function TaskColumn({status, tasks}: TaskColumnProps) {
 
     return (
         <div className="flex-1 mx-3">
-            {/* Sütun başlığı */}
             <div className={`${styles.headerBg} text-white text-center py-4 px-4 rounded-t-2xl shadow-xl`}>
                 <h2 className="text-xl font-bold tracking-wide">{status}</h2>
                 <div className="text-xs opacity-90 mt-1">{tasks.length} tasks</div>
             </div>
             
-            {/* Drop alanı */}
             <Droppable droppableId={status}>
                 {(provided, snapshot) => (
                     <div 
@@ -69,7 +66,6 @@ function TaskColumn({status, tasks}: TaskColumnProps) {
                         ))}
                         {provided.placeholder}
                         
-                        {/* Boş alan mesajı */}
                         {tasks.length === 0 && (
                             <div className="text-center text-gray-500 mt-8">
                                 <div className="text-4xl mb-2">📋</div>

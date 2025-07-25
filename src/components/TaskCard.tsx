@@ -11,7 +11,6 @@ interface TaskCardProps {
 function TaskCard({task, index}: TaskCardProps) {
   const renderDraggable = useDraggableInPortal();
   
-  // Status'e göre aksent rengi
   const getAccentColor = (status: string) => {
     switch (status) {
       case 'Pending':
@@ -63,9 +62,6 @@ function TaskCard({task, index}: TaskCardProps) {
                     <div className="flex items-center justify-between">
                         <div className={`${getBadgeColor(task.status)} border text-xs font-semibold px-3 py-1.5 rounded-full`}>
                             👤 {task.assignee}
-                        </div>
-                        <div className="text-xs text-gray-400 font-medium">
-                          #{task.id.slice(-4)}
                         </div>
                     </div>
                 </div>
