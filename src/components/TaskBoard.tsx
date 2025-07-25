@@ -1,7 +1,6 @@
 import React from 'react';
 import type { DropResult } from '@hello-pangea/dnd';
 import type { TaskProps } from '../types/index';
-import { Container, Row } from 'react-bootstrap';
 import { DragDropContext } from '@hello-pangea/dnd';
 import TaskColumn from './TaskColumn';
 
@@ -60,8 +59,8 @@ function TaskBoard({ tasks, setTasks }: TaskBoardProps) {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <Container>
-        <Row>
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex gap-4 justify-center min-h-screen">
           {statuses.map((status) => (
             <TaskColumn
               key={status}
@@ -69,8 +68,8 @@ function TaskBoard({ tasks, setTasks }: TaskBoardProps) {
               tasks={tasks.filter((task) => task.status === status)}
             />
           ))}
-        </Row>
-      </Container>
+        </div>
+      </div>
     </DragDropContext>
   );
 }
